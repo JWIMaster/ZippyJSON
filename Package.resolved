@@ -1,21 +1,30 @@
 {
   "pins" : [
     {
+      "identity" : "foundationcompatkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JWIMaster/FoundationCompatKit.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "070461b1af9dffbd033dcc230d50829c5a28cae3"
+      }
+    },
+    {
       "identity" : "jjliso8601dateformatter",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/michaeleisel/JJLISO8601DateFormatter",
+      "location" : "https://github.com/JWIMaster/JJLISO8601DateFormatter",
       "state" : {
-        "revision" : "ed1d996123688bade6e895aa49595f0d862900e7",
-        "version" : "0.1.7"
+        "branch" : "master",
+        "revision" : "f94853d7b7eccb0425a669adafff969f57597855"
       }
     },
     {
       "identity" : "zippyjsoncfamily",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/michaeleisel/ZippyJSONCFamily",
+      "location" : "https://github.com/JWIMaster/ZippyJSONCFamily",
       "state" : {
-        "revision" : "8abdd7a5e943afe68e7b03fdaa63b21c042a3893",
-        "version" : "1.2.9"
+        "branch" : "master",
+        "revision" : "3a98a90ecee808d804b0312c880d6b4723c945a9"
       }
     }
   ],

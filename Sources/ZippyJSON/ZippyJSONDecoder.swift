@@ -3,6 +3,7 @@
 import Foundation
 import ZippyJSONCFamily
 import JJLISO8601DateFormatter
+import FoundationCompatKit
 
 #if canImport(Combine)
 import Combine
@@ -15,8 +16,8 @@ extension ZippyJSONDecoder: TopLevelDecoder {
 
 typealias Value = JNTDecoderStorage
 
-fileprivate var _iso8601Formatter: JJLISO8601DateFormatter = {
-    let formatter = JJLISO8601DateFormatter()
+fileprivate var _iso8601Formatter: ISO8601DateFormatterCompat = {
+    let formatter = ISO8601DateFormatterCompat()
     formatter.formatOptions = .withInternetDateTime
     return formatter
 }()
@@ -135,7 +136,11 @@ public final class ZippyJSONDecoder {
         case .deferredToDate:
             return Foundation.JSONDecoder.DateDecodingStrategy.deferredToDate
         case .iso8601:
-            return Foundation.JSONDecoder.DateDecodingStrategy.iso8601
+            if #available(iOS 10.0, *) {
+                return Foundation.JSONDecoder.DateDecodingStrategy.iso8601
+            } else {
+                return .secondsSince1970
+            }
         case .millisecondsSince1970:
             return Foundation.JSONDecoder.DateDecodingStrategy.millisecondsSince1970
         case .secondsSince1970:
@@ -484,14 +489,17 @@ final private class __JSONDecoder: Decoder {
 }
 
 extension ZippyJSONDecoder.KeyDecodingStrategy {
-  @inline(__always)
-  var isNotDefault: Bool {
-    switch self {
-    case .useDefaultKeys: false
-    default: true
+    @inline(__always)
+    var isNotDefault: Bool {
+        switch self {
+        case .useDefaultKeys:
+            return false
+        default:
+            return true
+        }
     }
-  }
 }
+
 
 extension __JSONDecoder {
     // UnboxBegin
