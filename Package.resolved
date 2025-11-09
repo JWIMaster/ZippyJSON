@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "jjliso8601dateformatter",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/JWIMaster/JJLISO8601DateFormatter",
-      "state" : {
-        "branch" : "master",
-        "revision" : "f94853d7b7eccb0425a669adafff969f57597855"
-      }
-    },
-    {
       "identity" : "zippyjsoncfamily",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JWIMaster/ZippyJSONCFamily",

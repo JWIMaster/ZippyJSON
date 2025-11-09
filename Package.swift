@@ -15,14 +15,13 @@ let package = Package(
             targets: ["ZippyJSON"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/JWIMaster/JJLISO8601DateFormatter", branch: "master"),
         .package(url: "https://github.com/JWIMaster/ZippyJSONCFamily", branch: "master"),
         .package(url: "https://github.com/JWIMaster/FoundationCompatKit.git", branch: "master"),
     ],
     targets: [
         .target(
             name: "ZippyJSON",
-            dependencies: ["ZippyJSONCFamily", "JJLISO8601DateFormatter", "FoundationCompatKit"]),
+            dependencies: ["ZippyJSONCFamily", "FoundationCompatKit"]),
         .testTarget(
             name: "ZippyJSONTests",
             dependencies: ["ZippyJSON"],
