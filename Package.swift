@@ -1,11 +1,11 @@
-// swift-tools-version:5.7
+// swift-tools-version:5.6
 
 import PackageDescription
 
 let package = Package(
     name: "ZippyJSON",
     platforms: [
-        .iOS(.v11),
+        .iOS("7.0"),
         .tvOS(.v11),
         .macOS(.v10_13),
     ],
@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/michaeleisel/JJLISO8601DateFormatter", from: "0.1.7"),
-        .package(url: "https://github.com/michaeleisel/ZippyJSONCFamily", exact: "1.2.14"),
+        .package(url: "https://github.com/JWIMaster/ZippyJSONCFamily", branch: "master"),
     ],
     targets: [
         .target(
